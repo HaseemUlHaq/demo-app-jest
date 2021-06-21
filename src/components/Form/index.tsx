@@ -3,13 +3,12 @@ import './form.css';
 import FormHeader, { defaultHeaderProps } from './FormHeader';
 
 export interface FormProps {
-  username: string;
+  name: string;
   age: number;
 }
 
 export const sendToApi = (body: FormProps) => {
-  console.log('body :: ', body);
-  return true;
+  return body;
 };
 
 const Form: React.FC = () => {
@@ -29,7 +28,7 @@ const Form: React.FC = () => {
     <form onSubmit={handleSubmit}>
       <FormHeader form={form} />
       <p>Enter your name:</p>
-      <input type="text" name="username" onChange={handleChange} />
+      <input type="text" name="name" onChange={handleChange} />
       <p>Enter your age:</p>
       <input type="number" name="age" onChange={handleChange} />
       <button title="Submit" type="submit">

@@ -8,7 +8,7 @@ export interface HeaderProps {
 /** default props for Header */
 export const defaultHeaderProps = {
   form: {
-    username: '',
+    name: '',
     age: 0,
   },
 };
@@ -17,7 +17,7 @@ const FormHeader: React.FC<HeaderProps> = (props: HeaderProps) => {
   const { form } = props;
   return (
     <h1>
-      Hello {form.username} {form.age}
+      Hello {form.name} {form.age}
     </h1>
   );
 };
