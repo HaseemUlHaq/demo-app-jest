@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/Form should create correct snapshot for form 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <FormHeader
+    form={
+      Object {
+        "age": 0,
+        "name": "",
+      }
+    }
+  >
+    <h1>
+      Hello 
+       
+      0
+    </h1>
+  </FormHeader>
+  <p>
+    Enter your name:
+  </p>
+  <input
+    name="name"
+    onChange={[Function]}
+    type="text"
+  />
+  <p>
+    Enter your age:
+  </p>
+  <input
+    name="age"
+    onChange={[Function]}
+    type="number"
+  />
+  <button
+    title="Submit"
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
