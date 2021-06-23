@@ -25,6 +25,7 @@ exports[`components/Form should create correct snapshot for form 1`] = `
     name="name"
     onChange={[Function]}
     type="text"
+    value=""
   />
   <p>
     Enter your age:
@@ -33,6 +34,7 @@ exports[`components/Form should create correct snapshot for form 1`] = `
     name="age"
     onChange={[Function]}
     type="number"
+    value={0}
   />
   <button
     title="Submit"

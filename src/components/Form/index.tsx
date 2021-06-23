@@ -28,9 +28,9 @@ const Form: React.FC = () => {
     <form onSubmit={handleSubmit}>
       <FormHeader form={form} />
       <p>Enter your name:</p>
-      <input type="text" name="name" onChange={handleChange} />
+      <input type="text" name="name" value={form.name} onChange={handleChange} />
       <p>Enter your age:</p>
-      <input type="number" name="age" onChange={handleChange} />
+      <input type="number" name="age" value={form.age} onChange={handleChange} />
       <button title="Submit" type="submit">
         Submit
       </button>

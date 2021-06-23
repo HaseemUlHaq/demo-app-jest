@@ -7,13 +7,15 @@ describe('components/Form', () => {
   it('shoudld render without crash', () => {
     shallow(<Form />);
   });
+
   it('should render with empty fields', () => {
     const wrapper = mount(<Form />);
     const form = wrapper.find('input');
 
-    expect(form.at(0).prop('name')).toEqual('name');
-    expect(form.at(1).prop('name')).toEqual('age');
-
+    //name field
+    expect(form.at(0).prop('value')).toEqual('');
+    //age field
+    expect(form.at(1).prop('value')).toEqual(0);
     // header should be initialised by default state
     expect(wrapper.find('FormHeader h1').text()).toEqual('Hello  0');
   });
@@ -28,17 +30,19 @@ describe('components/Form', () => {
     expect(sendToApi(body)).toEqual(body);
   });
 
-//   it('should pass correct values to API', () => {
-//     const wrapper = mount(<Form />);
-//     expect(wrapper.find('input[name="name"]')).simulate('change', {
-//       target: { name: 'name', value: 'Onyx' },
-//     });
-//     expect(wrapper.find('input[name="age"]')).simulate('change', {
-//       target: { name: 'age', value: 10 },
-//     });
-//     wrapper.find('form').simulate('submit');
-//     // expect(form.at(1).prop('name')).toEqual('age');
-//   });
+  it('should pass correct values to API', () => {
+    const wrapper = mount(<Form />);
+    wrapper.find('input[name="name"]').simulate('change', {
+      target: { name: 'name', value: 'Onyx' },
+    });
+    wrapper.find('input[name="age"]').simulate('change', {
+      target: { name: 'age', value: 10 },
+    });
+    wrapper.find('form').simulate('submit');
+    // expect(form.at(1).prop('name')).toEqual('age');
+
+    expect(wrapper.find('FormHeader h1').text()).toEqual('Hello Onyx 10');
+  });
 
   // send correct data to API
 });
