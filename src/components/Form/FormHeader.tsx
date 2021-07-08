@@ -1,6 +1,6 @@
 import React from 'react';
 import { FormProps } from '.';
-
+import './form.css';
 export interface HeaderProps {
   form: FormProps;
 }
@@ -16,8 +16,8 @@ export const defaultHeaderProps = {
 const FormHeader: React.FC<HeaderProps> = (props: HeaderProps) => {
   const { form } = props;
   return (
-    <h1>
-      Hello {form.name} {form.age}
+    <h1 className="first-lt-color" style={{ textAlign: 'center' }}>
+      {form.name} {form.age}
     </h1>
   );
 };
