@@ -25,16 +25,33 @@ const Form: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <FormHeader form={form} />
-      <p>Enter your name:</p>
-      <input type="text" name="name" value={form.name} onChange={handleChange} />
-      <p>Enter your age:</p>
-      <input type="number" name="age" value={form.age} onChange={handleChange} />
-      <button title="Submit" type="submit">
-        Submit
-      </button>
-    </form>
+    <div className="card">
+      <form onSubmit={handleSubmit}>
+        <FormHeader form={form} />
+        <p style={{ textAlign: 'left' }}>Enter your name:</p>
+        <input
+          type="text"
+          name="name"
+          className="inputStyles"
+          value={form.name}
+          onChange={handleChange}
+        />
+        <p>Enter your age:</p>
+        <input
+          type="number"
+          min="0"
+          max="100"
+          name="age"
+          value={form.age}
+          onChange={handleChange}
+        />
+        <div className="btn-wrapper">
+          <button className="submit-btn" title="Submit" type="submit">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 
